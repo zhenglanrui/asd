@@ -32,7 +32,7 @@ jobs:
             sudo apt-get install -y git openjdk-8-jdk wget git zip unzip curl
        - name: Cloning...
          run: |
-             git clone https://github.com/xiaoxindada/SGSI-build-tool.git -b 12 $GITHUB_WORKSPACE/SGSI-build-tool
+             git clone https://github.com/xiaoxindada/SGSI-build-tool.git -b 9 $GITHUB_WORKSPACE/SGSI-build-tool
            
        - name: Download zip...
          run: |
