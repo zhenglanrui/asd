@@ -39,7 +39,7 @@ jobs:
             cd $GITHUB_WORKSPACE/SGSI-build-tool
             mkdir ./tmp
             cd ./tmp
-            sudo wget $ROM_URL -O $ZIP_NAME && ls
+            sudo wget $ROM_URL -q $ZIP_NAME && ls
             
        - name: Setup Tool Utils...
          if: env.SETUP == 'true'
@@ -54,7 +54,7 @@ jobs:
          run: |
             sudo bash $GITHUB_WORKSPACE/SGSI-build-tool/make.sh --a-only $OS_TYPE $ZIP_NAME --fix-bug            
        - name: Repack output file ...
-         run: |            
+         run: |             
              cd $GITHUB_WORKSPACE/SGSI-build-tool
              pwd
              zip -r $REPACK_NAME ./SGSI/*
