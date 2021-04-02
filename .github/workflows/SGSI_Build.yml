@@ -15,7 +15,7 @@ env:
   VERSION: 12
   upload_WeTransfer: 'true'
   upload_action-gh-release: 'false'
-  SETUP: 'true'
+  SETUP: 'true' 
   
 jobs:
   build:
@@ -73,7 +73,7 @@ jobs:
          with:
            files: ${{ github.workspace }}/SGSI-build-tool/${{ env.REPACK_NAME }}
            name: xiaoxinSGSI-${{ env.OS_TYPE }}-${{ env.BUILD_TYPE }}-Android${{ env.VERSION }}-unpack
-           tag_name: 9
+           tag_name: 12
            #body: Use actions auto bulid
          env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}       
