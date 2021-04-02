@@ -12,7 +12,7 @@ env:
   OS_TYPE: color
   BUILD_TYPE: 'ab'
   REPACK_NAME: test_action.zip
-  VERSION: 12
+  VERSION: 9
   upload_WeTransfer: 'true'
   upload_action-gh-release: 'false'
   SETUP: 'true'
@@ -57,7 +57,7 @@ jobs:
          run: |             
              cd $GITHUB_WORKSPACE/SGSI-build-tool
              pwd
-             zip -r $REPACK_NAME ./SGSI/*
+             zip -q $REPACK_NAME ./SGSI/*
              ls "$REPACK_NAME"
        - name: Upload SGSI to WeTransfer...
          if: env.upload_WeTransfer == 'true' 
@@ -73,7 +73,7 @@ jobs:
          with:
            files: ${{ github.workspace }}/SGSI-build-tool/${{ env.REPACK_NAME }}
            name: xiaoxinSGSI-${{ env.OS_TYPE }}-${{ env.BUILD_TYPE }}-Android${{ env.VERSION }}-unpack
-           tag_name: 12
+           tag_name: 9
            #body: Use actions auto bulid
          env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}       
